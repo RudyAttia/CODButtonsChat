@@ -10,7 +10,7 @@
         color:#F7D428 !important;
         font-family: "Arial", sans-serif;
         font-weight:600;
-        right:150px !important;
+        right:270px !important;
         left:auto !important;
        
         /*text-shadow: 0 0 1px rgba(0,0,0,0.7);*/
@@ -63,15 +63,15 @@
         right:150px !important;
         left:auto !important;
     }*/
-    @media screen and (max-width:480px){
+    @media screen and (max-width:600px){
         .embeddedServiceSidebar.layout-docked .dockableContainer{
             right:0px !important;
             left:auto !important;
         }
     }
-    @media screen and (min-width:481px){
+    @media screen and (min-width:601px){
         .embeddedServiceSidebar.layout-docked .dockableContainer{
-            right:150px !important;
+            right:270px !important;
             left:auto !important;
         }
     }
@@ -81,7 +81,7 @@
     }
 
     #globalBtnToChats{
-        width:80px;
+        width:200px;
         height:80px; 
         border-radius: 80px 80px 0px 80px ; 
         background-color:#ffcc00; 
@@ -92,12 +92,13 @@
         bottom:40px; 
         right:40px; 
         box-shadow: 0px 0px 6px rgb(146, 146, 146); 
-        font-size:35px; 
+        font-size:20px; 
         cursor:pointer;
-        background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694004109000/ChatContactIcon');
+        /*background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694004109000/ChatContactIcon');
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center;*/
         background-size: 60%;
+        color: rgba(64, 64, 64,1);
     }
     .btnsChat{
         width:60px; 
@@ -117,12 +118,12 @@
         bottom: 30px;
     }
     #btnWhatsapp{
-        background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694007535000/ChatWhatsappIcon?');
+        background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1695711158000/ChatWhatsappIcon?');
         background-repeat: no-repeat;
         background-position: center;
     }
     #btnLiveChat{
-        background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694007379000/ChatLiveChatIcon?');
+        background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1695711720000/ChatLiveChatIcon?');
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -159,35 +160,43 @@
         }
     }
     @keyframes globalBtnAnim{
-        from{
+        0%{
             border-radius: 80px 80px 0px 80px;
-            background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694004109000/ChatContactIcon');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 60%;
+            background-image: none;
+            width: 200px;
+            color: rgba(64, 64, 64,1);
         }
-        to{
+        10%{
+            color: rgba(64, 64, 64,0);
+        }
+        100%{
             border-radius: 80px;
             background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694170997000/ChatCloseIcone');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            width: 80px;
+            color: rgba(64, 64, 64,0);
         }
     }
     @keyframes globalBtnAnimRev{
-        from{
+        0%{
             border-radius: 80px;
             background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694170997000/ChatCloseIcone');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            width: 80px;
+            color: rgba(64, 64, 64,0);
         }
-        to{
+        40%{
+            color: rgba(64, 64, 64,0);
+        }
+        100%{
             border-radius: 80px 80px 0px 80px;
-            background-image: url('https://cityofdavid.my.salesforce-sites.com/resource/1694004109000/ChatContactIcon');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 60%;
+            background-image: none;
+            width: 200px;
+            color: rgba(64, 64, 64,1);
         }
     }
     @keyframes clickBtnAnim{
@@ -218,7 +227,9 @@
         <div id="btnWhatsapp" class="btnsChat" title="Whatsapp" onclick="onpenWhatsapp()"></div>
         <div id="btnLiveChat" class="btnsChat" title="Live Chat" onclick="openChat()"></div>
     <!-- </div> -->
-    <div id="globalBtnToChats" onclick="openAllBtns()"></div>
+    <div id="globalBtnToChats" onclick="openAllBtns()">
+        התחל צ׳אט עם נציג
+    </div>
 
     <script>
         let btnsOpen = false;
